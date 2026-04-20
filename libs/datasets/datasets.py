@@ -11,7 +11,6 @@ def register_dataset(name):
     return decorator
 
 def make_dataset(name, is_training, split, **kwargs):
- 
     kwargs.pop('backbone', None)
     kwargs.pop('division_type', None)
     kwargs.pop('videos_type', None)
@@ -20,7 +19,6 @@ def make_dataset(name, is_training, split, **kwargs):
     return dataset
 
 def make_data_loader(dataset, is_training, generator, batch_size, num_workers):
-   
     loader = torch.utils.data.DataLoader(
         dataset,
         batch_size=batch_size,
