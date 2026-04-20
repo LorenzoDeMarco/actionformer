@@ -168,4 +168,8 @@ class EGO4DDataset(Dataset):
                 data_dict, self.max_seq_len, self.trunc_thresh, feat_offset, self.crop_ratio
             )
 
+
         return data_dict
+    
+    def __len__(self):
+        return len(self.data_list)
