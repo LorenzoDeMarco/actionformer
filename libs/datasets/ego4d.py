@@ -54,11 +54,7 @@ class EGO4DDataset(Dataset):
         self.crop_ratio = crop_ratio
 
         dict_db, label_dict = self._load_json_db(self.json_file)
-        
-        if len(label_dict) != num_classes:
-            print(f"--> INFO: Updating num_classes from {num_classes} to {len(label_dict)}")
-            self.num_classes = len(label_dict)
-            
+    
         self.data_list = dict_db
         self.label_dict = label_dict
 
